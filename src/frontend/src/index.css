@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.375rem;
+
+    /* ── Background / Surface ── */
+    --background: 0.09 0 0;
+    --foreground: 0.97 0 0;
+
+    --card: 0.12 0 0;
+    --card-foreground: 0.97 0 0;
+
+    --popover: 0.13 0 0;
+    --popover-foreground: 0.97 0 0;
+
+    /* ── Primary  — Neon Green ── */
+    --primary: 0.87 0.29 128;
+    --primary-foreground: 0.08 0 0;
+
+    /* ── Secondary ── */
+    --secondary: 0.16 0 0;
+    --secondary-foreground: 0.97 0 0;
+
+    /* ── Muted ── */
+    --muted: 0.18 0 0;
+    --muted-foreground: 0.55 0 0;
+
+    /* ── Accent — Neon Green ── */
+    --accent: 0.87 0.29 128;
+    --accent-foreground: 0.08 0 0;
+
+    /* ── Destructive ── */
+    --destructive: 0.58 0.22 25;
+    --destructive-foreground: 0.97 0 0;
+
+    /* ── Borders ── */
+    --border: 0.22 0 0;
+    --input: 0.22 0 0;
+    --ring: 0.87 0.29 128;
+
+    /* ── Charts ── */
+    --chart-1: 0.87 0.29 128;
+    --chart-2: 0.7 0.18 145;
+    --chart-3: 0.6 0.22 25;
+    --chart-4: 0.75 0.16 80;
+    --chart-5: 0.65 0.2 240;
+
+    /* ── Sidebar ── */
+    --sidebar: 0.11 0 0;
+    --sidebar-foreground: 0.97 0 0;
+    --sidebar-primary: 0.87 0.29 128;
+    --sidebar-primary-foreground: 0.08 0 0;
+    --sidebar-accent: 0.16 0 0;
+    --sidebar-accent-foreground: 0.97 0 0;
+    --sidebar-border: 0.22 0 0;
+    --sidebar-ring: 0.87 0.29 128;
+
+    /* ── Custom tokens ── */
+    --neon: 0.87 0.29 128;
+    --surface-1: 0.12 0 0;
+    --surface-2: 0.15 0 0;
+    --surface-3: 0.19 0 0;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: "Inter", sans-serif;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.04em;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Bebas Neue", sans-serif;
+    letter-spacing: 0.04em;
+  }
+
+  .text-neon {
+    color: oklch(var(--neon));
+  }
+
+  .bg-neon {
+    background-color: oklch(var(--neon));
+  }
+
+  .border-neon {
+    border-color: oklch(var(--neon));
+  }
+
+  .glow-neon {
+    box-shadow: 0 0 20px oklch(0.87 0.29 128 / 0.5), 0 0 40px
+      oklch(0.87 0.29 128 / 0.2);
+  }
+
+  .glow-neon-text {
+    text-shadow: 0 0 20px oklch(0.87 0.29 128 / 0.8);
+  }
+
+  .card-dark {
+    background-color: oklch(var(--card));
+    border: 1px solid oklch(var(--border));
+  }
+
+  .hover-lift {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+  }
+
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px oklch(0 0 0 / 0.6);
+  }
+}
